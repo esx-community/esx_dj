@@ -6,6 +6,7 @@ This script makes you stream files at the bahamas. You press E and it will play 
 
 
 [HOW TO INSTALL]
+
 folder InteractSound
 
 InteractSound\client\html\sounds 
@@ -24,10 +25,12 @@ This script is still under development but works already.
 
 
 [KNOWN ISSUES]
+
 sometimes songs ends unexpectedly (not our fault)
 
 
 [server.cfg]
+
 ```
 start es_mp3
 start InteractSound
