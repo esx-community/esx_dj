@@ -5,7 +5,7 @@ This scrip is made by Jager Bom and Tracid
 This script makes you stream files at the bahamas. You press E and it will play random files you uploaded.
 
 
-#HOW TO INSTALL
+[HOW TO INSTALL]
 folder InteractSound
 
 InteractSound\client\html\sounds 
@@ -23,11 +23,11 @@ This script is still under development but works already.
 
 
 
-#KNOWN ISSUES
+[KNOWN ISSUES]
 sometimes songs ends unexpectedly (not our fault)
 
 
-#server.cfg
+[server.cfg]
 ```
 start es_mp3
 start InteractSound
