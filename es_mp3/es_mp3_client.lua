@@ -8,9 +8,8 @@ Citizen.CreateThread(function()
 		Citizen.Wait(0)
 	end
 end)
+
 -- Fin init ESX
-
-
 local soundDistance = 10 -- Distance of MP3 sounds
 
 Key = 38 -- ENTER
@@ -58,7 +57,6 @@ function startAttitude(lib, anim)
 	    end
 	    SetPedMovementClipset(playerPed, anim, true)
 	end)
-
 end
 
 function startAnim(lib, anim)
@@ -72,9 +70,7 @@ function startAnim(lib, anim)
 	  end
 
 	  TaskPlayAnim(GetPlayerPed(-1), lib ,anim ,8.0, -8.0, -1, 0, 0, false, false, false )
-
 	end)
-
 end
 
 function startScenario(anim)
@@ -82,7 +78,6 @@ function startScenario(anim)
 end
 
 function OpenAnimationsSubMenu(menu)
-
 	local title    = nil
 	local elements = {}
 
@@ -97,18 +92,13 @@ function OpenAnimationsSubMenu(menu)
 			end
 
 			break
-
 		end
-
 	end
 
-	ESX.UI.Menu.Open(
-		'default', GetCurrentResourceName(), 'animations_sub',
-		{
+	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'animations_sub',	{
 			title    = title,
 			elements = elements
-		},
-		function(data, menu)
+		}, function(data, menu)
 
 			local type = data.current.type
 			local lib  = data.current.value.lib
@@ -124,12 +114,9 @@ function OpenAnimationsSubMenu(menu)
 					startAnim(lib, anim)
 			end
 
-		end,
-		function(data, menu)
+		end, function(data, menu)
 			menu.close()
-		end
-	)
-
+		end)
 end
 
 function CloseAnimationsSubMenu()
@@ -137,7 +124,7 @@ function CloseAnimationsSubMenu()
 end
 
 local function startPointing()
-  
+
   local playerPed = GetPlayerPed(-1)
 
   RequestAnimDict("anim@mp_point")
@@ -170,11 +157,6 @@ local function stopPointing()
     
     ClearPedSecondaryTask(PlayerPedId())
 end
-
-
-
-
-
 
 Citizen.CreateThread(function ()
 	while true do
@@ -220,12 +202,9 @@ Citizen.CreateThread(function ()
 		if not isInMarker and HasAlreadyEnteredMarker then
 				HasAlreadyEnteredMarker = false
 				TriggerServerEvent("InteractSound_SV:PlayWithinDistance", soundDistance, "vide", 1.0)
-		end
-		
+		end	
 	end
-	
 end)
-
 
 RegisterNetEvent('es_mp3:success')
 AddEventHandler('es_mp3:success', function (price)
